@@ -132,11 +132,11 @@ public class skill {
 	}
 	
 	//TODO check if origin is necessary
-	//TODO rotating pixels is retarded figure out another way
+	//TODO rotating pixels is not working as I would think figure out another way
 	static public HashSet<Point> final_area_affected(HashSet<Point> non_rotated_area_affected, Point origin, double radians) {
 		HashSet<Point> final_area_affected = new HashSet<Point>();
 		for(Point p : non_rotated_area_affected) {
-			//TODO check if flooring the points doesnt make it render retarded
+			//TODO check if flooring the points doesnt make it render
 			double new_x = origin.x + (p.x - origin.x) * Math.cos(radians) - (p.y - origin.y) * Math.sin(radians);
 			double new_y = origin.y + (p.x - origin.x) * Math.sin(radians) + (p.y - origin.y) * Math.cos(radians);
 			final_area_affected.add(new Point((int) Math.floor(new_x), (int) Math.floor(new_y)));
